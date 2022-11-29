@@ -2,9 +2,7 @@
    <div class="ms_container text-center mb-2">
       <label class="me-2" for="series">scegli categoria</label>
       <select class="p-1 rounded-3" name="series" id="series" @change="changeCategory">
-         <option value="ashdoia" selected>selezionaa</option>
          <option value="breaking-bad">Breaking Bad</option>
-         <option value="bb-better-call">Breaking Bad, Better Call Saul</option>
          <option value="better-call">Better Call Saul</option>
       </select>
    </div>
@@ -12,6 +10,7 @@
 
 <script>
 import { store } from '../store.js';
+import axios from 'axios';
 export default {
    data() {
       return {
@@ -22,24 +21,18 @@ export default {
       changeCategory() {
          // prendo il select nel dom
          const option = document.getElementById('series').value;
-         // in base al valore del select, stampo in pagino le card giuste
-         // if (option === 'breaking-bad') {
-         //    const filteredArr = store.charactersInfo.filter((characterInfo) => {
-         //       characterInfo.category === 'Breaking Bad';
-         //       this.store.charactersInfo = filteredArr;
-         //       console.log(characterInfo.category);
-         //    });
-         // } else if (option === 'bb-better-call') {
-         //    const filteredArr = store.charactersInfo.filter((characterInfo) => {
-         //       characterInfo.category === 'Breaking Bad, Better Call Saul';
-         //       this.store.charactersInfo = filteredArr;
-         //    });
-         // } else if (option === 'better-call') {
-         //    const filteredArr = store.charactersInfo.filter((characterInfo) => {
-         //       characterInfo.category === 'Better Call Saul';
-         //       this.store.charactersInfo = filteredArr;
-         //    });
-         // }
+         //
+         if (option === 'breaking-bad') {
+            axios.get('https://www.breakingbadapi.com/api/characters?category=Breaking+Bad').then((response) => {
+               this.store.charactersInfo = response.data;
+               console.log(this.store.charactersInfo);
+            });
+         } else if (option === 'better-call') {
+            axios.get('https://www.breakingbadapi.com/api/characters?category=Better+Call+Saul').then((response) => {
+               this.store.charactersInfo = response.data;
+               console.log(this.store.charactersInfo);
+            });
+         }
       },
    },
 };
