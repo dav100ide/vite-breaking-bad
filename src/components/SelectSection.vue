@@ -20,7 +20,26 @@ export default {
    },
    methods: {
       changeCategory() {
+         // prendo il select nel dom
+         const option = document.getElementById('series').value;
          // in base al valore del select, stampo in pagino le card giuste
+         // if (option === 'breaking-bad') {
+         //    const filteredArr = store.charactersInfo.filter((characterInfo) => {
+         //       characterInfo.category === 'Breaking Bad';
+         //       this.store.charactersInfo = filteredArr;
+         //       console.log(characterInfo.category);
+         //    });
+         // } else if (option === 'bb-better-call') {
+         //    const filteredArr = store.charactersInfo.filter((characterInfo) => {
+         //       characterInfo.category === 'Breaking Bad, Better Call Saul';
+         //       this.store.charactersInfo = filteredArr;
+         //    });
+         // } else if (option === 'better-call') {
+         //    const filteredArr = store.charactersInfo.filter((characterInfo) => {
+         //       characterInfo.category === 'Better Call Saul';
+         //       this.store.charactersInfo = filteredArr;
+         //    });
+         // }
       },
    },
 };
