@@ -1,4 +1,11 @@
 /*----------------
 IMPORT BOOTSTRAP
 ----------------*/
-@import "/node_modules/bootstrap/scss/bootstrap";
+@import '/node_modules/bootstrap/scss/bootstrap';
+/*----------------
+   macro areas
+----------------*/
+body {
+   background-color: var(--primary-color);
+   color: var(--neutral-color-100);
+}

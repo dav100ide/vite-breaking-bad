@@ -1,9 +1,11 @@
 <template>
-   <div class="ms_card">
-      <img :src="characterInfo.img" :alt="characterInfo.name" class="img-fluid" />
-      <h3>{{ characterInfo.name }}</h3>
-      <div class="series">Breaking Bad</div>
-      <div class="status">{{ characterInfo.status }}</div>
+   <div>
+      <div class="ms_card p-3 text-center">
+         <img :src="characterInfo.img" :alt="characterInfo.name" class="img-fluid" />
+         <h3>{{ characterInfo.name }}</h3>
+         <div class="series">Breaking Bad</div>
+         <div class="status">{{ characterInfo.status }}</div>
+      </div>
    </div>
 </template>
 
@@ -17,6 +19,10 @@ export default {
 
 <style lang="scss" scoped>
 .ms_card {
-   background-color: steelblue;
+   background-color: var(--primary-color);
+   .series,
+   .status {
+      color: var(--neutral-color-200);
+   }
 }
 </style>

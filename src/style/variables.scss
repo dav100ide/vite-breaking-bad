@@ -1,5 +1,16 @@
-@import "/node_modules/bootstrap/scss/functions";
-@import "/node_modules/bootstrap/scss/variables";
-@import "/node_modules/bootstrap/scss/maps";
-@import "/node_modules/bootstrap/scss/mixins";
-@import "/node_modules/bootstrap/scss/utilities";
+@import '/node_modules/bootstrap/scss/functions';
+@import '/node_modules/bootstrap/scss/variables';
+@import '/node_modules/bootstrap/scss/maps';
+@import '/node_modules/bootstrap/scss/mixins';
+@import '/node_modules/bootstrap/scss/utilities';
+/*----------------------------------
+   my variables 
+---------------------------------------*/
+:root {
+   // colors
+   --primary-color: #2e3a46;
+   --primary-color-400: #212529;
+   --neutral-color-100: white;
+   --neutral-color-200: rgb(209, 207, 207);
+   --neutral-color-900: black;
+}

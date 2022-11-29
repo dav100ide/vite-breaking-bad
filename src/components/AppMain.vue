@@ -1,5 +1,5 @@
 <template>
-   <main class="ms_container row">
+   <main class="ms_container row g-3">
       <AppCard class="col-6 col-md-4 col-lg-3" v-for="character in charactersInfo" :characterInfo="character" />
    </main>
 </template>
@@ -31,6 +31,7 @@ export default {
 
 <style lang="scss" scoped>
 .ms_container {
+   background-color: var(--neutral-color-100);
    max-width: 1100px;
    margin: 0 auto;
 }
