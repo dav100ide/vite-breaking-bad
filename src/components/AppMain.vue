@@ -1,29 +1,34 @@
 <template>
-   <main class="ms_container row g-3">
-      <AppCard class="col-6 col-md-4 col-lg-3" v-for="character in charactersInfo" :characterInfo="character" />
+   <main class="ms_container p-3">
+      <ResultBar />
+      <div class="row g-3">
+         <AppCard class="col-6 col-md-4 col-lg-3" v-for="character in store.charactersInfo" :characterInfo="character" />
+      </div>
    </main>
 </template>
 
 <script>
-import AppCard from './AppCard.vue';
 import axios from 'axios';
+import AppCard from './AppCard.vue';
+import ResultBar from './ResultBar.vue';
+import { store } from '../store.js';
 
 export default {
    components: {
       AppCard,
+      ResultBar,
    },
 
    data() {
       return {
-         charactersInfo: [],
+         store,
       };
    },
    created() {
       axios
          .get('https://www.breakingbadapi.com/api/characters') //
          .then((response) => {
-            this.charactersInfo = response.data;
-            console.log(response.data[2]);
+            this.store.charactersInfo = response.data;
          });
    },
 };
@@ -32,7 +37,5 @@ export default {
 <style lang="scss" scoped>
 .ms_container {
    background-color: var(--neutral-color-100);
-   max-width: 1100px;
-   margin: 0 auto;
 }
 </style>

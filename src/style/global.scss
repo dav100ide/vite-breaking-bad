@@ -9,3 +9,11 @@ body {
    background-color: var(--primary-color);
    color: var(--neutral-color-100);
 }
+
+/*----------------
+   my utilities
+----------------*/
+.ms_container {
+   max-width: 1100px;
+   margin: 0 auto;
+}
