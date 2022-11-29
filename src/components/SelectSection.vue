@@ -20,7 +20,7 @@ export default {
    },
    methods: {
       changeCategory() {
-         console.log(opt);
+         // in base al valore del select, stampo in pagino le card giuste
       },
    },
 };
